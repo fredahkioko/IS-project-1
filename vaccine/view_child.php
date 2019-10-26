@@ -1,13 +1,13 @@
 <?php
     session_start();
     require_once "config/dbConnect.php";
-    $mysqli_result = mysqli_query($dbConn,"SELECT * FROM users");
+    $mysqli_result = mysqli_query($dbConn,"SELECT * FROM children");
 ?>
 
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Users View Page</title>
+        <title>View child Details</title>
         <meta name = "viewport" content = "width=device-width, initial-scale=1" />
         <meta charset = "uft-8" />
         <link rel = "stylesheet" href = "css/homepage.css" />
@@ -22,44 +22,42 @@
 }</style>
     </head>
     <body>
-<?php require_once "top_navadmin.php"; ?>
-        <div class = "header">
-            <h1>IMMUNIZATION TRACKING SYSTEM</h1>
-        </div>
+<?php require_once "top_navchild.php"; ?>
+        
     <div id = "wrap">
        <div class="">
         <table border="1" cellpadding="0" cellspacing="0">
           <thead>
             <tr>
-              <th>UserId</th>
-              <th>Fullname</th>
-              <th>Username</th>
-              <th>Email</th>
-              <th>Phonenumber</th>
-              <th>userType</th>
+              <th>childId</th>
+              <th>Firstname</th>
+              <th>Lastname</th>
+              <th>Hospitalname</th>
+              <th>Dateofbirth</th>
+              <th>Gender</th>
             
             </tr>
           </thead>
           <tbody>
             <?php while($row = mysqli_fetch_array($mysqli_result)) { ?>
                    <tr>
-                      <td><?php echo $row['userId']; ?></td>
-                      <td><?php echo $row['fullname']; ?></td>
-                      <td><?php echo $row['username']; ?></td>
-                      <td><?php echo $row['email']; ?></td>
-                      <td><?php echo $row['phonenumber']; ?></td>
-                      <td><?php echo $row['userType']; ?></td>
+                      <td><?php echo $row['childId']; ?></td>
+                      <td><?php echo $row['firstname']; ?></td>
+                      <td><?php echo $row['lastname']; ?></td>
+                      <td><?php echo $row['hospitalname']; ?></td>
+                      <td><?php echo $row['dateofbirth']; ?></td>
+                      <td><?php echo $row['gender']; ?></td>
                       <td>
-                          <a href = "update.php">
-                            <form action = "./update.php" method="POST">
-                              <?php echo '<input value="'.$row['userId'].'" name="userId" hidden>'; ?><input type = "submit" name = "viewUser" value = "UPDATE">
+                          <a href = "update_child.php">
+                            <form action = "./update_child.php" method="POST">
+                              <?php echo '<input value="'.$row['childId'].'" name="childId" hidden>'; ?><input type = "submit" name = "viewChild" value = "UPDATE">
                             </form>                            
                           </a>
                       </td>
                       <td>
-                          <a href = "delete.php">
-                            <form action = "./delete.php" method="POST">
-                              <?php echo '<input value="'.$row['userId'].'" name="userId" hidden>'; ?><input type = "submit" name = "viewDel" value = "DELETE">
+                          <a href = "delete_child.php">
+                            <form action = "./delete_child.php" method="POST">
+                              <?php echo '<input value="'.$row['childId'].'" name="childId" hidden>'; ?><input type = "submit" name = "viewDel" value = "DELETE">
                                </form>                
                           </a>
                       </td>

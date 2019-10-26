@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>New Member creation Page</title>
+        <title>Add child</title>
         <meta name = "viewport" content = "width=device-width, initial-scale=1" />
         <meta charset = "uft-8" />
         <link rel = "stylesheet" href = "css/homepage.css" />
@@ -16,25 +16,23 @@
     border-radius:10px; 
     border:10px solid #3d3d3d;
     float:center;
-    background:black;
+    background:white;
 }</style>
     </head>
     <body>
-        <?php require_once "top_navadmin.php"; ?>
-        <div class = "header">
-            <h1>IMMUNIZATION TRACKING SYSTEM</h1>
-        </div>
+        <?php require_once "top_navchild.php"; ?>
+        
 <?php
 if(isset($_POST['viewUser'])){
-	$search_result = mysqli_query($dbConn, "SELECT * FROM users WHERE userId=" . $_POST['userId']);
+	$search_result = mysqli_query($dbConn, "SELECT * FROM children WHERE childId=" . $_POST['childId']);
 	while($res = mysqli_fetch_array($search_result))
 	{
-		$userId = $res['userId'];
-        $fullname = $res['fullname'];
-		$username = $res['username'];
-        $email = $res['email'];
-        $phonenumber = $res['phonenumber'];
-		$userType = $res['userType'];
+		$chidId = $res['childId'];
+        $firstname = $res['firstname'];
+		$lastname = $res['lastname'];
+        $hospitalname = $res['hospitalname'];
+        $dateofbirth = $res['dateofbirth'];
+		$gender = $res['gender'];
 	}
 }
 ?>
@@ -53,34 +51,36 @@ table tr th{
 </head>
 <body>
 	<div id = "wrap">
-	<form action= "processes/user_processes.php?userId=<?php echo $userId; ?>" method = "POST">
+	<form action= "processes/s_processes.php?childId=<?php echo $childId; ?>" method = "POST">
 		<table border="1" cellpadding="0" cellspacing="0">
 			<tr> 
-				<td>fullname</td>
-				<td><input type="text" name="fullname" value="<?php echo $fullname;?>"></td>
+				<td>firstname</td>
+				<td><input type="text" name="firstname" value="<?php echo $firstname;?>"></td>
 			</tr>
 			<tr> 
-				<td>username</td>
-				<td><input type="text" name="username" value="<?php echo $username;?>"></td>
+				<td>lastname</td>
+				<td><input type="text" name="lastname" value="<?php echo $lastname;?>"></td>
 			</tr>
 			<tr> 
-				<td>email</td>
-				<td><input type="email" name="email" value="<?php echo $email;?>"></td>
+				<td>Hospital name</td>
+				<td><input type="email" name="hospitalname" value="<?php echo $hospitalname;?>"></td>
 			</tr>
 			<tr> 
-				<td>phonenumber</td>
-				<td><input type="text" name="phonenumber" value="<?php echo $phonenumber;?>"></td>
+				<td>Date of Birth</td>
+				<td><input type="text" name="dateofbirth" value="<?php echo $dateofbirth;?>"></td>
 			</tr>
 			<tr> 
-				<td>userType</td>
-            	<td><select name="userType" value="<?php echo $userType;?>">
-            <option value = "">----Please Select User Type----</option>
-            <option value = "parent">Parent</option>
-            <option value = "nurse">Nurse</option>
+				<td>Gender</td>
+				            	<td><select name="gender" value="<?php echo $gender;?>">
+            <label for="gender"><b>Gender :</b></label>
+     <input type="radio" name="gender" value="Female" checked="true"/> Female
+	 
+	 <input type="radio" name="gender" value="Male"/> Male<br/></br>
+	 
           </select></td>
 			</tr>
 			<tr>
-				<td><a href = "view.php"><input type="submit" name="update" value="UPDATE"></td></a>
+				<td><a href = "view_child.php"><input type="submit" name="update" value="UPDATE"></td></a>
 			</tr>
 		</table>
 	</form>
@@ -92,7 +92,7 @@ table tr th{
             $updateCheck=$_GET['update'];
 
             if($updateCheck=="success"){
-            echo"<p userId='success'>User updated successfully</p>";
+            echo"<p childId='success'>User updated successfully</p>";
             exit();
             }
         }     

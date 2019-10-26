@@ -73,25 +73,18 @@ body {
 
 <div class="navbar">
 
-        <a href="./">Home</a>
-        <a href="">About us</a>
-        <a href="">Search</a>
-        <a href="contactus.html">Contact Us</a>
-        <a href="lecturer.php">Track Immunization</a>
-        <a href="articlescreate.php">create notification</a>
-		<a href="childreg.php">Regester child</a>
-        <a href="nurseview.php">View Child details</a>
-
-        
+        <a href="homepage.html">Home</a>
+        <a href="lecturer.php">Immunization schedule</a>
+        <a href="c.php">Immunization calendar</a>             
          <div class="dropdown">
          <button class="dropbtn">Register Child
       <i class="fa fa-caret-down"></i>
     </button>
     <div class="dropdown-content">
       <a href="create_child.php">Add new child</a>
-      <a href="#">update child details</a>
-      <a href="#">delete child details</a>
-	  <a href="#">view child details</a>
+      <a href="update_child.php">Update child details</a>
+      <a href="delete_child.php">Delete child details</a>
+	  <a href="view_child.php">view child details</a>
     </div>
   </div> 
   <div class = "topnav-right">

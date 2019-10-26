@@ -10,20 +10,37 @@
         <meta name = "viewport" content = "width=device-width, initial-scale=1" />
         <meta charset = "uft-8" />
         <link rel = "stylesheet" href = "css/homepage.css" />
+		<style>
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+}
+
+img.child {
+  width: 50%;
+  border-radius: 50%;
+}
+
+.container {
+  padding: 16px;
+   max-width: 550px;
+    border-radius: 20px;
+    margin: auto;
+    background: black;
+    box-sizing: border box;
+    padding: 40px;
+    color: white;
+    margin top: 100px;
+    float: center;
+    width: 66.66%;
+    padding: 40px;  
+}
+		</style
     </head>
     <?php require_once "top_navparent.php"; ?>
-        <div class = "header">
-            <h1>IMMUNIZATION TRACKING SYSTEM</h1>
-        </div>
-
-        <div class = "row">
-          <div class = "content1">
-             <h1>This is the Parent page accessed by the parent only!!</h1>
-          </div>
-         </div>
-        <div class = "footer" >
-            <h3>Copyright &copy; Immunization Tracking System</h3>
-        </div>
+	<div class="imgcontainer">
+	 <img src= "images/mother.jpg"alt="child" class="child">
+      </div>  
 
   </body>  
   </html>       

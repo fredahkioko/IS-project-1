@@ -54,7 +54,7 @@ body{
     margin: auto;
     background: #145A32;
     box-sizing: border box;
-    padding: 40px;
+    padding: 60px;
     color: white;
     margin top: 100px;
     float: center;
@@ -149,8 +149,6 @@ table{
 table tr th{
     padding-top:20px;
 }
-
-
 
 .cancelbtn {
 	width: 100px;

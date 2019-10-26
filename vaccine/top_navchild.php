@@ -1,11 +1,9 @@
-       <div class = "topnav">
+  <div class = "topnav">
         <a href="homepage.html">Home</a>
-        <a href="">About us</a>
-        <a href="">Search</a>
-        <a href="contactus.html">Contact Us</a>
-       <a href="admin.php">Control Panel</a>
-       <a href="create.php">Add Users</a>
-       <a href="view.php">View Users</a>
+        
+      
+       <a href="create_child.php">Add child</a>
+       <a href="view_child.php">View child</a>
 
             <div class = "topnav-right">
                 <a href = "" >Welcome <?php print $_SESSION["control"]["username"]; ?></a>

@@ -22,9 +22,7 @@
     </head>
     <body>
    <?php require_once "top_navadmin.php"; ?>
-        <div class = "header">
-            <h1>IMMUNIZATION TRACKING SYSTEM</h1>
-        </div>
+        
         <div id ="content">
             <div id ="wrap">
             <form action= "processes/user_processes.php" method = "POST">
@@ -84,9 +82,7 @@
         }     
      ?>
         </div>
-        <div class = "footer" >
-            <h3>Copyright &copy; Immunization Tracking System</h3>
-        </div>
+        
 
   </body>  
   </html>       

@@ -5,30 +5,28 @@
   <meta name ="viewport" content="width=device-width, initial-scale=1" /><meta charset="utf-8" />
   <link rel="stylesheet" type="text/css" href="css/homepage.css"/>
   <style>
+
   body {background-color: #white;}
   </style>
 </head>
 <body>
 	<div class = "topnav">
-		<a href="./">Home</a>
-		<a href="">About us</a>
-		<a href="">Search</a>
-		<a href="contactus.html">Contact Us</a>
+		
 
 		<div class = "topnav-right">
+		    <a href="homepage.html">Home</a>
 			<a href="signup.php">Register</a>
 			<a href="signin.php">Login</a>
 		</div>
 	</div>
-	<div class = "header">
-		<h1>IMMUNIZATION TRACKING SYSTEM</h1>
-	</div>
+	
 	
 	<div class = "row">
 		<div class = "content">
 			<h2>Register Here</h2>
-			<form action="processes/user_processes.php"method = "POST" autocomplete="off">
+			<form action="processes/user_processes.php"method = "POST">
 				<div>
+				<p>Please fill in this form to create an account.</p>
 					<label for = "">Fullname: </label>
 					<input type = "text" name = "fullname" placeholder=" Your fullname" required autofocus />
 				</div>
@@ -61,14 +59,12 @@
           </select>
 			</div>
 			<div>
-				<input type = "submit" name = "signup" value = "Sign Up" />
+				<input type = "submit" name = "signup" value = "Register" />
 				<button type="button" class="cancelbtn">Cancel</button>
 			</div>
 			</form>
 		</div>
 	</div>
-	<div class = "footer" >
-		<h3>Copyright &copy; Immunization Tracking System</h3>
-	</div>
+	
 </body>
 </html>
